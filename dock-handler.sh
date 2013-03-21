@@ -7,7 +7,7 @@ shopt -s nullglob
 shopt -s failglob
 
 DEBUG=0
-LOG='var/log/thinkpad-dock.log'
+LOG='/var/log/thinkpad-dock.log'
 HOME='/home/leo'	# TODO: SET THIS TO THE HOMEDIR OF YOUR LOGGED IN USER!
 
 if [ "$DEBUG" -eq 1 ] ; then
