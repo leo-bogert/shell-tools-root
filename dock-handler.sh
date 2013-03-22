@@ -57,7 +57,7 @@ case "$DOCKED" in
 			echo "Warning: Starting Freenet failed!" >&2
 		fi
 
-		mount-server.sh
+		/root/bin/shell-tools-root/mount-server.sh
 	;;
 esac
 exit 0
