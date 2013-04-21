@@ -10,8 +10,7 @@ SERVER_IP='10.0.0.1'
 SHARES=( '/home/leo/Server-Freenet' # dest of CIFS share
 		'/home/leo/Server' # dest of CIFS share
 		'/home/leo/Multimedia' # dest of CIFS share
-		'/home/leo/Multimedia/Music/Archive' # src of bind mountpoint, dest won't work
-		'/home/leo/Multimedia/Music-Old/Albums' # src of bind mountpoint, dest won't work
+		'/home/leo/Multimedia/Musik' # src of bind mountpoint, dest won't work
 		)
 
 wait_for_network() {
