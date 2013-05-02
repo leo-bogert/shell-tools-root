@@ -30,6 +30,9 @@ call_disper() {
 case "$DOCKED" in
 	'0') #undocked event
 		echo "$(date --rfc-3339=s): Undock handler..."
+		
+		# make sure that we discharge the main battery before the ultrabay battery
+		echo '1' > '/sys/devices/platform/smapi/BAT0/force_discharge'
 
 		if ! call_disper --single ; then # prevent errexit
 			echo "Warning: Switching display failed!" >&2
