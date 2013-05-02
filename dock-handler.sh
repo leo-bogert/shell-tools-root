@@ -33,6 +33,9 @@ case "$DOCKED" in
 		
 		# make sure that we discharge the main battery before the ultrabay battery
 		echo '1' > '/sys/devices/platform/smapi/BAT0/force_discharge'
+		if [ -e '/sys/devices/platform/smapi/BAT1/force_discharge' ] ; then
+			echo '0' > '/sys/devices/platform/smapi/BAT1/force_discharge'
+		fi
 
 		if ! call_disper --single ; then # prevent errexit
 			echo "Warning: Switching display failed!" >&2
@@ -51,6 +54,12 @@ case "$DOCKED" in
 	;;
 	'1') #docked event
 		echo "$(date --rfc-3339=s): Dock handler..."
+
+		# we are on AC so we must charge the batteries now
+		echo '0' > '/sys/devices/platform/smapi/BAT0/force_discharge'
+        if [ -e '/sys/devices/platform/smapi/BAT1/force_discharge' ] ; then
+            echo '0' > '/sys/devices/platform/smapi/BAT1/force_discharge'
+        fi
 
 		if ! call_disper --secondary ; then
 			echo "Warning: Switching display failed!" >&2
