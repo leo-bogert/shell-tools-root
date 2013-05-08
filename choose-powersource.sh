@@ -31,8 +31,8 @@ main() {
 	
 	case "$1" in
 		batmain)
-			force_discharge main 1
 			force_discharge ultrabay 0
+			force_discharge main 1
 			;;
 		batultrabay)
 			force_discharge main 0
