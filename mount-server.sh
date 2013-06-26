@@ -6,7 +6,7 @@ set -o errtrace
 shopt -s nullglob
 shopt -s failglob
 
-SERVER_IP='10.0.0.1'
+SERVER_IP='server'
 SHARES=( '/home/leo/Server-Freenet' # dest of CIFS share
 		'/home/leo/Server' # dest of CIFS share
 		'/home/leo/Multimedia' # dest of CIFS share
