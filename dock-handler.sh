@@ -32,8 +32,8 @@ case "$DOCKED" in
 		echo "$(date --rfc-3339=s): Undock handler..."
 		
 		# make sure that we discharge the main battery before the ultrabay battery
-		echo '1' > '/sys/devices/platform/smapi/BAT0/force_discharge'
 		if [ -e '/sys/devices/platform/smapi/BAT1/force_discharge' ] ; then
+			echo '1' > '/sys/devices/platform/smapi/BAT0/force_discharge'
 			echo '0' > '/sys/devices/platform/smapi/BAT1/force_discharge'
 		fi
 
